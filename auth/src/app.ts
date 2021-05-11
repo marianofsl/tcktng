@@ -15,7 +15,7 @@ const app = express()
     .use(json())
     .use(cookieSession({
         signed: false,
-        secure: process.env.NODE_ENV !== 'test' //secure is disable in tests
+        secure: false//process.env.NODE_ENV !== 'test' //secure is disable in tests
     }))
     .use(signinRouter)
     .use(signoutRouter)

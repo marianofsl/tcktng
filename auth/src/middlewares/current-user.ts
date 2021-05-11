@@ -16,8 +16,7 @@ declare global {
 
 export const currentUser = (req: Request, res: Response, next: NextFunction) => {
     if (!req.session?.jwt) {
-        // return res.status(401).send();
-        return next();
+        return res.status(401).send();
     }
 
     try {
@@ -29,8 +28,8 @@ export const currentUser = (req: Request, res: Response, next: NextFunction) => 
         req.currentUser = payload;
     }
     catch (err) {
-        // res.send(401).send();
+        res.send(401).send();
     }
-    
+
     next();
 };
