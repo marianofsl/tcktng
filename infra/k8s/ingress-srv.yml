@@ -7,19 +7,23 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
-    - host: ingress-nginx-controller.ingress-nginx.svc.cluster.local
-      http:
-        paths:
-          - path: /api/users/?(.*)
-            backend:
-              serviceName: auth-srv
-              servicePort: 3000
+    # - host: ingress-nginx-controller.ingress-nginx.svc.cluster.local
+    #   http:
+    #     paths:
+    #       - path: /api/users/?(.*)
+    #         backend:
+    #           serviceName: auth-srv
+    #           servicePort: 3000
     - host: tcktng.com
       http:
         paths:
           - path: /api/users/?(.*)
             backend:
               serviceName: auth-srv
+              servicePort: 3000
+          - path: /api/tickets/?(.*)
+            backend:
+              serviceName: tickets-srv
               servicePort: 3000
           - path: /?(.*)
             backend:

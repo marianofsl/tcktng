@@ -8,6 +8,8 @@ import { BaseError } from '../errors/base-error';
         );
     }
 
+    console.error(err);
+
     return res.status(400).send({
         errors: [
             {

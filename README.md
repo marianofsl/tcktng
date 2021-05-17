@@ -5,6 +5,8 @@ minikube kubectl -- create secret generic jwt-secret --from-literal=jwt=abc
 npm login
 
 npm version patch
+npm run build
+npm publish
 
 npm 
 

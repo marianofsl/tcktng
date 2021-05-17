@@ -6,9 +6,6 @@ import { Ticket } from '../models/ticket'
 const router = express.Router();
 
 router.post('/api/tickets', currentUser, [
-    // body('email')
-    //     .isEmail()
-    //     .withMessage('Email must be valid'),
     body('title')
         .notEmpty()
         .withMessage('A valid title is required'),
