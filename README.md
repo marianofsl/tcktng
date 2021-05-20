@@ -1,14 +1,9 @@
-minikube addons enable ingress
-
-minikube kubectl -- create secret generic jwt-secret --from-literal=jwt=abc
-
-npm login
-
-npm version patch
-npm run build
-npm publish
-
-npm 
+minikube addons enable ingress  
+minikube kubectl -- create secret generic jwt-secret --from-literal=jwt=abc  
+npm login  
+npm version patch  
+npm run build  
+npm publish  
 
 npm update @tcktng/common
 
@@ -19,3 +14,5 @@ curl --header "Content-Type: application/json" --request GET https://tcktng.com/
 curl --header "Content-Type: application/json" --request POST --data '{"email": "test@test2.com", "password": "12345"}' https://tcktng.com/api/users/signup -v --insecure
 
 curl --header "Content-Type: application/json" --request POST --data '{"email": "test@test2.com", "password": "12345"}' https://tcktng.com/api/users/signin -v --insecure
+
+minikube kubectl -- port-forward nats-ss-depl-5b4f579c4d-wv48n 4222:4222
